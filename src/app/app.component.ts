@@ -7,5 +7,6 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
-  template = '<div>Hello</div>';
+  myObjt = { name: this.name };
+  template = '<div> Mon nom est {{ context.name}}</div>';
 }
