@@ -58,7 +58,7 @@ export class DgAdhocComponent implements OnChanges, OnInit, OnDestroy {
     try {
       this.update();
     } catch (e) {
-      if (_.isNil(this.errorHandler)) {
+      if (this.errorHandler == null) {
         throw e;
       } else {
         this.errorHandler(e);
@@ -90,7 +90,7 @@ export class DgAdhocComponent implements OnChanges, OnInit, OnDestroy {
       this._moduleRef = null;
     }
 
-    if (_.isNil(this.html) || this.html.trim() === '') {
+    if (this.html == null || this.html.trim() === '') {
       return;
     }
 
@@ -113,7 +113,8 @@ export class DgAdhocComponent implements OnChanges, OnInit, OnDestroy {
   private createModuleType(componentType: Type<SafeAny>): Type<SafeAny> {
     let metadata: NgModule = {};
 
-    if (!_.isNil(this.module)) {
+    if (!(this.module == null)) {
+        console.log(this.module)
       metadata = _.cloneDeep(this.module);
     }
 
