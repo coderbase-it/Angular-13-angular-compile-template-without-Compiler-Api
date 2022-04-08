@@ -7,6 +7,12 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
-  myObjt = { name: this.name };
-  template = '<div> Mon nom est {{ context.name}}</div>';
+  myObjt = {
+    name: this.name,
+    call: function () {
+      console.log('hello');
+    },
+  };
+  template =
+    '<div (click)="context.call()"> Mon nom est {{ context.name}}</div>';
 }

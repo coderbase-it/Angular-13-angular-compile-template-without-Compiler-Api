@@ -114,7 +114,7 @@ export class DgAdhocComponent implements OnChanges, OnInit, OnDestroy {
     let metadata: NgModule = {};
 
     if (!(this.module == null)) {
-        console.log(this.module)
+      console.log(this.module);
       metadata = _.cloneDeep(this.module);
     }
 
@@ -150,6 +150,7 @@ export class DgAdhocComponent implements OnChanges, OnInit, OnDestroy {
 
     const componentType = class AdhocComponent {
       context: SafeAny = context;
+      //call = context.call;
     };
     const componentTypeCreator: TypeDecorator = Component(metadata);
     // noinspection UnnecessaryLocalVariableJS
