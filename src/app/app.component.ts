@@ -14,5 +14,5 @@ export class AppComponent {
     },
   };
   template =
-    '<div (click)="context.call()"> Mon nom est {{ context.name}}</div>';
+    '<div (click)="context.call()"> JIT template compilation with context :  {{ context.name}}</div>';
 }
