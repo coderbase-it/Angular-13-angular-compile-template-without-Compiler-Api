@@ -15,7 +15,6 @@ import {
   TypeDecorator,
   ViewContainerRef,
 } from '@angular/core';
-import * as _ from 'lodash';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -115,7 +114,7 @@ export class DgAdhocComponent implements OnChanges, OnInit, OnDestroy {
 
     if (!(this.module == null)) {
       console.log(this.module);
-      metadata = _.cloneDeep(this.module);
+      metadata = JSON.parse(JSON.stringify(this.module));
     }
 
     metadata.imports = metadata.imports || [];
